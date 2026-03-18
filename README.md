@@ -30,6 +30,7 @@ This project simulates a real-world development workflow using Git branches (`de
 ### 1. Clone the repository
 
 git clone https://github.com/tulika105/Git-Learning.git
+
 cd Git-Learning
 
 ---
