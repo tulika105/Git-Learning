@@ -61,6 +61,14 @@ You: what is git commit?
 
 Git Tutor: `git commit` saves your staged changes and creates a snapshot of your project.
 
+Basic command:
+
+git commit -m "your commit message"
+
+Note: Make sure to stage changes first using:
+
+git add .
+
 ---
 
 ## 🔁 Git Workflow Used
