@@ -54,7 +54,7 @@ def main():
             print(f"\nGit Tutor: {response}\n")
 
         except Exception as e:
-            print(f"\n⚠️ Error: {e}\n")
+            print(f"\n Error: {e}\n")
 
 
 if __name__ == "__main__":
