@@ -43,7 +43,7 @@ def main():
         user_input = input("You: ").strip()
 
         if user_input.lower() in ("exit", "quit"):
-            print("\n👋 Bye! Keep committing 🚀\n")
+            print("\n Bye! Keep committing \n")
             break
 
         if not user_input:
