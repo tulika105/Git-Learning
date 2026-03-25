@@ -1,4 +1,5 @@
 import os
+import random
 from dotenv import load_dotenv
 from google import genai
 
@@ -43,7 +44,14 @@ def main():
         user_input = input("You: ").strip()
 
         if user_input.lower() in ("exit", "quit"):
-            print("\n Bye! Keep committing \n")
+            goodbyes = [
+                "\n👋 Bye! Keep committing! 🚀\n",
+                "\n✌️ Happy branching! May your merges always be clean.\n",
+                "\n🎯 See ya! Don't forget to push your changes! 📤\n",
+                "\n😄 Goodbye! Remember: commit early, commit often!\n",
+                "\n🌟 Adios! Git gud out there! 😎\n",
+            ]
+            print(random.choice(goodbyes))
             break
 
         if not user_input:
