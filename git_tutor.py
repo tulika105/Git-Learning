@@ -50,6 +50,8 @@ def main():
                 "\n🎯 See ya! Don't forget to push your changes! 📤\n",
                 "\n😄 Goodbye! Remember: commit early, commit often!\n",
                 "\n🌟 Adios! Git gud out there! 😎\n",
+                "\n📚 Later! Keep rebasing wisely and writing legendary commit messages.\n",
+                "\n🧩 Bye for now! Keep your branches tidy and your commits meaningful.\n"
             ]
             print(random.choice(goodbyes))
             break
