@@ -2,6 +2,12 @@ import os
 import random
 from dotenv import load_dotenv
 from google import genai
+from rich.console import Console
+from rich.markdown import Markdown
+from rich.panel import Panel
+from rich.prompt import Prompt
+
+console = Console()
 
 # Load environment variables
 load_dotenv()
@@ -29,8 +35,7 @@ def ask_gemini(chat, user_message):
 
 
 def main():
-    print("\n🤖 Git Tutor — Powered by Gemini")
-    print("Ask me anything about Git! Type 'exit' to quit.\n")
+    console.print(Panel.fit("[bold blue]🤖 Git Tutor — Powered by Gemini[/bold blue]\nAsk me anything about Git! Type [bold red]'exit'[/bold red] to quit.", title="Welcome", border_style="blue"))
 
     # Create chat session
     chat = client.chats.create(
@@ -41,19 +46,19 @@ def main():
     )
 
     while True:
-        user_input = input("You: ").strip()
+        user_input = Prompt.ask("\n[bold green]You[/bold green]").strip()
 
         if user_input.lower() in ("exit", "quit"):
             goodbyes = [
-                "\n👋 Bye! Keep committing! 🚀\n",
-                "\n✌️ Happy branching! May your merges always be clean.\n",
-                "\n🎯 See ya! Don't forget to push your changes! 📤\n",
-                "\n😄 Goodbye! Remember: commit early, commit often!\n",
-                "\n🌟 Adios! Git gud out there! 😎\n",
-                "\n📚 Later! Keep rebasing wisely and writing legendary commit messages.\n",
-                "\n🧩 Bye for now! Keep your branches tidy and your commits meaningful.\n"
+                "👋 Bye! Keep committing! 🚀",
+                "✌️ Happy branching! May your merges always be clean.",
+                "🎯 See ya! Don't forget to push your changes! 📤",
+                "😄 Goodbye! Remember: commit early, commit often!",
+                "🌟 Adios! Git gud out there! 😎",
+                "📚 Later! Keep rebasing wisely and writing legendary commit messages.",
+                "🧩 Bye for now! Keep your branches tidy and your commits meaningful."
             ]
-            print(random.choice(goodbyes))
+            console.print(f"\n[bold magenta]{random.choice(goodbyes)}[/bold magenta]\n")
             break
 
         if not user_input:
@@ -61,10 +66,10 @@ def main():
 
         try:
             response = ask_gemini(chat, user_input)
-            print(f"\nGit Tutor: {response}\n")
+            console.print("\n", Panel(Markdown(response), title="[bold cyan]Git Tutor[/bold cyan]", border_style="cyan"))
 
         except Exception as e:
-            print(f"\n Error: {e}\n")
+            console.print(f"\n[bold red]❌ Error: {e}[/bold red]\n")
 
 
 if __name__ == "__main__":
