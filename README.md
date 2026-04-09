@@ -2,7 +2,7 @@
 
 An AI-powered command-line assistant that helps you learn Git and GitHub interactively.
 
-This project simulates a real-world development workflow using Git branches (`dev → staging → main`) while building an intelligent assistant using Google's Gemini API.
+This project simulates a real-world development workflow using Git branches (`dev → staging → main`) while building an intelligent assistant using Gemini API.
 
 ---
 
